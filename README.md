@@ -26,6 +26,13 @@ Make sure the following tools are installed on **Windows 11**:
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [Visual Studio Code](https://code.visualstudio.com/) (or similar)
 
+## Customization and recommendations
+
+- To use a modern Ubuntu version (e.g. `hashicorp-education/ubuntu-24-04`).
+- Static player information is set in `playbook.yml` and `roles/match/vars/match_vars.yml`.
+- API player data is dynamically fetched and parsed in `main.yml`.
+- Assign a static IP to the private network to avoid issues with host-only interfaces and conflicting DHCP servers.
+
 ## Usage
 
 ### Start and provision the VM
@@ -66,12 +73,6 @@ vagrant halt
 ```bash
 vagrant destroy
 ```
-
-## Customization
-
-- To use a modern Ubuntu version (e.g. `hashicorp-education/ubuntu-24-04`).
-- Static player information is set in `playbook.yml` and `roles/match/vars/match_vars.yml`.
-- API player data is dynamically fetched and parsed in `main.yml`.
 
 ## Output Example
 
