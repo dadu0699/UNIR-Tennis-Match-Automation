@@ -1,0 +1,8 @@
+- hosts: all
+  become: true
+  vars:
+    first_name: Aitor
+    last_name: Menta
+    city: Madrid
+  roles:
+    - match

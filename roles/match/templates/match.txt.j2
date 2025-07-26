@@ -1,0 +1,13 @@
+** UNIR TENNIS MATCH INFORMATION **
+
+First Name: {{ first_name }}.
+Last Name: {{ last_name }}.
+City: {{ city }}.
+ID: {{ id }}.
+
+First Name: {{ (api_response.content | from_json).results[0].name.first }}.
+Last Name: {{ (api_response.content | from_json).results[0].name.last }}.
+City: {{ (api_response.content | from_json).results[0].location.city }}.
+ID: {{ (api_response.content | from_json).results[0].id.value | default('N/A') }}.
+
+Date: {{ ansible_date_time.iso8601 }}.

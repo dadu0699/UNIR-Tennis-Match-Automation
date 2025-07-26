@@ -1,0 +1,21 @@
+- name: Include match-specific variables
+  include_vars: vars/match_vars.yml
+
+- name: Fetch second player's data from API
+  uri:
+    url: "https://randomuser.me/api/?results=1&nat=es"
+    return_content: yes
+  register: api_response
+
+- name: Generate match file
+  template:
+    src: match.txt.j2
+    dest: /vagrant/match.txt
+
+- name: Display match file contents
+  command: cat /vagrant/match.txt
+  register: match_output
+
+- name: Show match output
+  debug:
+    var: match_output.stdout
